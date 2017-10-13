@@ -33,23 +33,22 @@ print(sorted_word)
 print(temp_word)
 
 
-turn = 0
+turn = 8
 
 # si la lettre existe dans le mot, on la remplace au bon endroit
-def test_keystroke(keystroke,turn):
+def test_keystroke(keystroke):
 	for index, item in enumerate(splited_sorted_word):
 		if keystroke == item:
 			temp_word[index] = keystroke
 			print(temp_word)
-	turn +=1
-	print(turn)
-	return turn
+			if temp_word == splited_sorted_word:
+				print("bravo, vous avez trouvé le mot")
 
 
-if turn < 8:	
+for x in range(turn):	
 	keystroke = raw_input("tapez une lettre ")
 	# on teste si la lettre tapée est dans le mot
-	test_keystroke(keystroke, turn)
+	test_keystroke(keystroke)
 
 print(turn)
 
